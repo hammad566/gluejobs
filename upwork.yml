@@ -135,7 +135,7 @@ Resources:
       Type: SCHEDULED
       Schedule: cron(00 0/1 * * ? *)
       WorkflowName: !Ref JobsWorkflow
-      StartOnCreation: 'true'
+    #  StartOnCreation: 'true'
       Actions:
         - JobName: !Sub ${Environment}-${Source}-jobs-data-ingest
       Name: !Sub ${Environment}-${Source}-jobs-trigger
@@ -145,7 +145,7 @@ Resources:
     Properties:
       Type: CONDITIONAL
       WorkflowName: !Ref JobsWorkflow
-      StartOnCreation: 'true'
+    #  StartOnCreation: 'true'
       Actions:
         - JobName: !Sub ${Environment}-${Source}-jobs-data-curated
       Name: !Sub ${Environment}-${Source}-jobs-transformation-trigger
@@ -161,7 +161,7 @@ Resources:
       Type: SCHEDULED
       Schedule: cron(00 00 ? * MON *)
       WorkflowName: !Ref freelanceWorkflow
-      StartOnCreation: 'true'
+    #  StartOnCreation: 'true'
       Actions:
         - JobName: !Sub ${Environment}-${Source}-freelancer-data-ingest
       Name: !Sub ${Environment}-${Source}-freelancer-trigger
@@ -171,7 +171,7 @@ Resources:
     Properties:
       Type: CONDITIONAL
       WorkflowName: !Ref freelanceWorkflow
-      StartOnCreation: 'true'
+    #  StartOnCreation: 'true'
       Actions:
         - JobName: !Sub ${Environment}-${Source}-freelancer-data-curated
       Predicate:
