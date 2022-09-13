@@ -90,7 +90,7 @@ Resources:
       Type: SCHEDULED
       Schedule: cron(0 12 * * ? *)
       WorkflowName: !Ref GuruWorkflow
-    #  StartOnCreation: 'true'
+      StartOnCreation: 'true'
       Actions:
         - JobName: !Sub ${Environment}-${Source}-jobs-data-ingest
       Name: !Sub ${Environment}-${Source}-jobs-Ingest-trigger
@@ -100,7 +100,7 @@ Resources:
     Properties:
       Type: CONDITIONAL
       WorkflowName: !Ref GuruWorkflow
-    #  StartOnCreation: 'true'
+      StartOnCreation: 'true'
       Actions:
         - JobName: !Sub ${Environment}-${Source}-jobs-data-curated
       Predicate:
