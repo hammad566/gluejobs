@@ -14,9 +14,9 @@ Parameters:
     Description: Name of the Bucket
     Type: String
     Default: freelance-analytics-codebase
-  GlueWorkflowRoleParameter:
-    Description: Name of Glue Role
-    Type: String
+  # GlueWorkflowRoleParameter:
+  #   Description: Name of Glue Role
+  #   Type: String
 
 ###########################################################################
  # AWS Resources
