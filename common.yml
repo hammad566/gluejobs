@@ -45,7 +45,7 @@ Resources:
         Fn::Join:
         - "-"
         - - Ref: Environment
-          - freelance-analytics-glue-role1
+          - freelance-analytics-glue-role5
       AssumeRolePolicyDocument:
         Version: '2012-10-17'
         Statement:
