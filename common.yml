@@ -16,7 +16,7 @@ Resources:
   #       Fn::Join:
   #       - "-"
   #       - - Ref: Environment
-  #         - freelance-analytics-raw-demo
+  #         - freelance-analytics-raw
   #     NotificationConfiguration:
   #       LambdaConfigurations:
   #       - Event: s3:ObjectCreated:*
@@ -40,11 +40,12 @@ Resources:
     Type: AWS::IAM::Role
     Properties:
       Description: Allow Glue to call AWS services on your behalf.
-      RoleName: 
+      RoleName:
+      # Remove demo after completion
         Fn::Join:
         - "-"
         - - Ref: Environment
-          - freelance-analytics-glue-role
+          - freelance-analytics-glue-role-demo
       AssumeRolePolicyDocument:
         Version: '2012-10-17'
         Statement:
