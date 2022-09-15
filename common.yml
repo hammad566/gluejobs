@@ -16,7 +16,7 @@ Resources:
   #       Fn::Join:
   #       - "-"
   #       - - Ref: Environment
-  #         - freelance-analytics-raw
+  #         - freelance-analytics-raw-demo
   #     NotificationConfiguration:
   #       LambdaConfigurations:
   #       - Event: s3:ObjectCreated:*
