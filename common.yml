@@ -10,22 +10,7 @@ Parameters:
 
 Resources:
   RawBucket:
-    Type: AWS::S3::Bucket
-    Properties:
-      BucketName:
-        Fn::Join:
-        - "-"
-        - - Ref: Environment
-          - freelance-analytics-raw
 
-  CuratedBucket:
-    Type: AWS::S3::Bucket
-    Properties:
-      BucketName:
-        Fn::Join:
-        - "-"
-        - - Ref: Environment
-          - freelance-analytics-curated
   
   Role:
     Type: AWS::IAM::Role
