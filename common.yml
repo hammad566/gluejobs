@@ -9,32 +9,23 @@ Parameters:
     Default: dev
 
 Resources:
-  # RawBucket:
-  #   Type: AWS::S3::Bucket
-  #   Properties:
-  #     BucketName:
-  #       Fn::Join:
-  #       - "-"
-  #       - - Ref: Environment
-  #         - freelance-analytics-raw
-  #     NotificationConfiguration:
-  #       LambdaConfigurations:
-  #       - Event: s3:ObjectCreated:*
-  #         Function:
-  #           Fn::GetAtt:
-  #           - TriggerWorkFlowLambdaFunction
-  #           - Arn
-  #   DependsOn:
-  #   - S3LambdaPermission
-  #   - TriggerWorkFlowLambdaFunction
-  # CuratedBucket:
-  #   Type: AWS::S3::Bucket
-  #   Properties:
-  #     BucketName:
-  #       Fn::Join:
-  #       - "-"
-  #       - - Ref: Environment
-  #         - freelance-analytics-curated
+  RawBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName:
+        Fn::Join:
+        - "-"
+        - - Ref: Environment
+          - freelance-analytics-raw
+
+  CuratedBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName:
+        Fn::Join:
+        - "-"
+        - - Ref: Environment
+          - freelance-analytics-curated
   
   Role:
     Type: AWS::IAM::Role
