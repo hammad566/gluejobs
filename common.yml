@@ -8,10 +8,7 @@ Parameters:
     Type: String
     Default: dev
 
-Resources:
-  RawBucket:
-
-  
+Resources:  
   Role:
     Type: AWS::IAM::Role
     Properties:
