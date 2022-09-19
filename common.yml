@@ -14,11 +14,10 @@ Resources:
     Properties:
       Description: Allow Glue to call AWS services on your behalf.
       RoleName:
-      # Remove demo after completion
         Fn::Join:
         - "-"
         - - Ref: Environment
-          - freelance-analytics-glue-role1
+          - freelance-analytics-glue-role
       AssumeRolePolicyDocument:
         Version: '2012-10-17'
         Statement:
