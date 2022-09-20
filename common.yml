@@ -126,10 +126,10 @@ Resources:
       - arn:aws:iam::aws:policy/AmazonS3FullAccess
   #    - arn:aws:iam::aws:policy/AmazonSESFullAccess
 
-Outputs:
-  Role:
-    Description: Glue Role is common for other CFT
-    Value: !Ref Role
-    Export:
-      Name: 
-       Fn::Sub: ${AWS::StackName}-Role
+# Outputs:
+#  Role:
+#    Description: Glue Role is common for other CFT
+#    Value: !Ref Role
+#    Export:
+#      Name: 
+#       Fn::Sub: ${AWS::StackName}-Role
