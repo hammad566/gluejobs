@@ -132,4 +132,4 @@ Outputs:
     Value: !Ref Role
     Export:
       Name: 
-       Fn::Sub: ${AWS::StackName}-Role
+       Fn::Sub: "${AWS::StackName}-Role"
