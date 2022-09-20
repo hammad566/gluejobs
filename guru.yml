@@ -45,7 +45,7 @@ Resources:
       MaxRetries: 0
       Name: !Sub ${Environment}-${Source}-jobs-data-ingest
       Role: 
-        Fn::ImportValue:
+       - Fn::ImportValue:
           Fn::Sub: "${GlueWorkflowRoleParameter}-Role"
       Timeout: 2880
 
@@ -65,7 +65,7 @@ Resources:
       DefaultArguments:
         "--job-bookmark-option": "job-bookmark-disable"
       Role:
-        Fn::ImportValue:
+       - Fn::ImportValue:
           Fn::Sub: "${GlueWorkflowRoleParameter}-Role"
       Timeout: 2880
 
