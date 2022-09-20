@@ -35,7 +35,7 @@ Resources:
         Fn::Join:
         - "-"
         - - Ref: Environment
-          - freelance-analytics-raw
+          - freelance-analytics-raw2
 
   JobsDataIngest:
     Type: AWS::Glue::Job
