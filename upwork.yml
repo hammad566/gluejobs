@@ -46,7 +46,7 @@ Resources:
       Name: !Sub ${Environment}-${Source}-jobs-data-ingest
       Role: 
         Fn::ImportValue:
-          !Sub ${GlueWorkflowRoleParameter}-Role
+          Fn::Sub: "${GlueWorkflowRoleParameter}-Role" 
       Timeout: 2880
 
   JobsDataCurated:
@@ -66,7 +66,7 @@ Resources:
         "--job-bookmark-option": "job-bookmark-disable"
       Role: 
         Fn::ImportValue:
-          !Sub ${GlueWorkflowRoleParameter}-Role
+          Fn::Sub: "${GlueWorkflowRoleParameter}-Role"
       Timeout: 2880
 
   FreelancerDataIngest:
@@ -86,7 +86,7 @@ Resources:
       Name: !Sub ${Environment}-${Source}-freelancer-data-ingest
       Role: 
         Fn::ImportValue:
-          !Sub ${GlueWorkflowRoleParameter}-Role
+          Fn::Sub: "${GlueWorkflowRoleParameter}-Role"
       Timeout: 2880
 
   FreelanceDataCurated:
@@ -106,7 +106,7 @@ Resources:
         "--job-bookmark-option": "job-bookmark-disable"
       Role: 
         Fn::ImportValue:
-          !Sub ${GlueWorkflowRoleParameter}-Role
+          Fn::Sub: "${GlueWorkflowRoleParameter}-Role"
       Timeout: 2880
 
 ###########################################################################
