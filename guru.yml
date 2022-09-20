@@ -24,15 +24,6 @@ Parameters:
 
 Resources:
 
-  RawBucket:
-    Type: AWS::S3::Bucket
-    Properties:
-      BucketName:
-        Fn::Join:
-        - "-"
-        - - Ref: Environment
-          - freelance-analytics-raw1
-
 ###########################################################################
  # AWS Glue Jobs
 ###########################################################################
