@@ -46,7 +46,7 @@ Resources:
       Name: !Sub ${Environment}-${Source}-jobs-data-ingest
       Role: 
         Fn::ImportValue:
-          !Sub ${GlueWorkflowRoleParameter}-Role
+          Fn::Sub: "${GlueWorkflowRoleParameter}-Role"
       Timeout: 2880
 
   GuruDataCurated:
@@ -66,7 +66,7 @@ Resources:
         "--job-bookmark-option": "job-bookmark-disable"
       Role:
         Fn::ImportValue:
-          !Sub ${GlueWorkflowRoleParameter}-Role
+          Fn::Sub: "${GlueWorkflowRoleParameter}-Role"
       Timeout: 2880
 
 ###########################################################################
