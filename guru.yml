@@ -13,7 +13,7 @@ Parameters:
   BucketName:
     Description: Name of the Bucket
     Type: String
-    Default: freelance-analytics-codebase2
+    Default: freelance-analytics-codebase
   GlueWorkflowRoleParameter:
     Description: Name of Glue Role
     Type: String
