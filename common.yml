@@ -129,7 +129,10 @@ Resources:
 Outputs:
   Role:
     Description: Glue Role is common for other CFT
-    Value: !Ref Role
+    Value: 
+      'Fn::GetAtt':
+        - Role
+        - Arn
     Export:
       Name: 
        Fn::Sub: "${AWS::StackName}-Role"
