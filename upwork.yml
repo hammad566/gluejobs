@@ -34,11 +34,11 @@ Resources:
       Command:
         Name: pythonshell
         PythonVersion: '3'
-        ScriptLocation: !Sub s3://${BucketName}/${Environment}/main.py
+        ScriptLocation: !Sub s3://${BucketName}/main.py
       DefaultArguments:
         "--incremental": "True"
         "--workflow_name": !Sub ${Environment}-${Source}-jobs-workflow
-        "--extra-py-files": !Sub s3://${BucketName}/${Environment}/upwork_manager.py,s3://${BucketName}/${Environment}/s3_utils.py,s3://${BucketName}/${Environment}/python_upwork-2.1.0-py3.7.egg
+        "--extra-py-files": !Sub s3://${BucketName}/upwork_manager.py,s3://${BucketName}/s3_utils.py,s3://${BucketName}/python_upwork-2.1.0-py3.7.egg
       ExecutionProperty: 
         MaxConcurrentRuns: 1
       GlueVersion : '1.0'
@@ -54,7 +54,7 @@ Resources:
     Properties: 
       Command:
         Name: glueetl
-        ScriptLocation: !Sub s3://${BucketName}/${Environment}/fa_curated_data.py
+        ScriptLocation: !Sub s3://${BucketName}/fa_curated_data.py
       ExecutionProperty: 
         MaxConcurrentRuns: 1
       GlueVersion : '2.0'
@@ -75,10 +75,10 @@ Resources:
       Command:
         Name: pythonshell
         PythonVersion: '3'
-        ScriptLocation: !Sub s3://${BucketName}/${Environment}/main1.py
+        ScriptLocation: !Sub s3://${BucketName}/main1.py
       DefaultArguments:
         "--workflow_name": !Sub ${Environment}-${Source}-freelancer-workflow
-        "--extra-py-files": !Sub s3://${BucketName}/${Environment}/upwork_manager.py,s3://${BucketName}/${Environment}/s3_utils.py,s3://${BucketName}/${Environment}/python_upwork-2.1.0-py3.7.egg
+        "--extra-py-files": !Sub s3://${BucketName}/upwork_manager.py,s3://${BucketName}/s3_utils.py,s3://${BucketName}/python_upwork-2.1.0-py3.7.egg
       ExecutionProperty: 
         MaxConcurrentRuns: 1
       GlueVersion : '1.0'
@@ -94,7 +94,7 @@ Resources:
     Properties: 
       Command:
         Name: glueetl
-        ScriptLocation: !Sub s3://${BucketName}/${Environment}/fa_freelance_curated_data.py
+        ScriptLocation: !Sub s3://${BucketName}/fa_freelance_curated_data.py
       ExecutionProperty: 
         MaxConcurrentRuns: 1
       GlueVersion : '2.0'
