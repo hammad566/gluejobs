@@ -34,11 +34,11 @@ Resources:
       Command:
         Name: pythonshell
         PythonVersion: '3'
-        ScriptLocation: !Sub s3://${BucketName}/${Environment}/guru_handler.py
+        ScriptLocation: !Sub s3://${BucketName}/guru_handler.py
       DefaultArguments:
         "--incremental": "True"
         "--workflow_name": !Sub ${Environment}-${Source}-workflow
-        "--extra-py-files": !Sub s3://${BucketName}/${Environment}/fa_guru_ingest.py,s3://${BucketName}/${Environment}/s3_utils.py
+        "--extra-py-files": !Sub s3://${BucketName}/fa_guru_ingest.py,s3://${BucketName}/s3_utils.py
       ExecutionProperty: 
         MaxConcurrentRuns: 1
       GlueVersion : '1.0'
@@ -54,7 +54,7 @@ Resources:
     Properties: 
       Command:
         Name: glueetl
-        ScriptLocation: !Sub s3://${BucketName}/${Environment}/fa_guru_transformation.py
+        ScriptLocation: !Sub s3://${BucketName}/fa_guru_transformation.py
       ExecutionProperty: 
         MaxConcurrentRuns: 1
       GlueVersion : '2.0'
