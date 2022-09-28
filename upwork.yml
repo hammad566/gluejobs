@@ -138,7 +138,7 @@ Resources:
       StartOnCreation: 'true'
       Actions:
         - JobName: !Sub ${Environment}-${Source}-jobs-data-ingest
-      Name: !Sub ${Environment}-${Source}-jobs-trigger
+      Name: !Sub ${Environment}-${Source}-jobs-Ingest-trigger
 
   JobsTransformationTrigger:
     Type: AWS::Glue::Trigger
@@ -164,7 +164,7 @@ Resources:
       StartOnCreation: 'true'
       Actions:
         - JobName: !Sub ${Environment}-${Source}-freelancer-data-ingest
-      Name: !Sub ${Environment}-${Source}-freelancer-trigger
+      Name: !Sub ${Environment}-${Source}-freelancer-Ingest-trigger
 
   FreelanceTransformationTrigger:
     Type: AWS::Glue::Trigger
